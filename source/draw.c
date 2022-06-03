@@ -30,79 +30,36 @@ SDL_Texture *loadTexture(Win *app, char *img_path)
     return texture;
 }
 
-/*
-**  drawEntity
-*/
+void drawEntity(Win *app, Entity *entity)
+{
+    SDL_Rect dest= {entity->pos_x, entity->pos_y, entity->width, entity->height};
+    // dest.x = entity->pos_x;
 
-int drawEntity(Win *app, Entity *entity, Entity *player)
+    SDL_RenderCopy(app->renderer, entity->texture, NULL, &dest);
+}
+
+int create_food(Win *app, Entity *entity, Entity *player)
 {
     entity->RectPos = (SDL_Rect){entity->pos_x, entity->pos_y, entity->width, entity->height};
     if (move_enemy(entity, player))
         // Si une collision entre le joueur et l'ennemi est détectée
         return 1;
 
-    // L'ennemi a atteint le bord gauche, on le remet comme non affiché et à repartir depuis le bord droit
-    if (entity->pos_x <= 0 && !entity->isplayer)
-    {
-        DEBUG_LOG(printf("Entité %s arrivée au bord !!\n", entity->entityname));
-        entity->pos_x = WINDOW_WIDTH - 64;
-        entity->pos_y = rand() % (WINDOW_HEIGHT - 64);
-        // On demande une arrivée aléatoire de l'ennemi
-        entity->hasarrived = 0;
-        DEBUG_LOG(printf("entity->pos_y = %d\n", entity->pos_y));
-    }
+    is_displayed(app, entity);
 
-    // On détermine si une entity non affichée doit apparaître
-    if (!entity->hasarrived)
-    {
-        if (rand() % 120 == 0)
-        {
-            entity->hasarrived = 1;
-        }
-    }
+    is_arrived(entity);
 
-    // Si l'entity est affichable, on l'affiche
-    if (entity->hasarrived)
-    {
-        SDL_RenderCopy(app->renderer, entity->texture, NULL, &entity->RectPos);
-    }
     return 0;
 }
 
-Entity *init_entity(Win *app, char *entityname, char isplayer, int width, int height, char *texture)
+Entity *init_entity(Win *app, char *entityname, int isplayer, int width, int height, char *texture)
 {
     Entity *entity = malloc(sizeof(Entity));
-    entity->entityname = malloc(30);
+    entity->entityname = malloc(sizeof(entity->entityname));
     strcpy(entity->entityname, entityname);
     entity->isplayer = isplayer;
 
-    // Si l'entité est un joueur
-    if (isplayer)
-    {
-        entity->hasarrived = 1;
-        entity->speed = 10;
-        entity->pos_x = 100;
-        entity->pos_y = 100;
-    }
-    // Si l'entité est un ennemi
-    else
-    {
-        entity->hasarrived = 0;
-        // La vitesse est variable selon le type d'ennemi (nom)
-        if (!strcmp(entity->entityname, "Carotte"))
-        {
-            entity->speed = 7;
-        }
-        else
-        {
-            entity->speed = 4;
-        }
-        entity->pos_x = WINDOW_WIDTH - 10;
-        entity->pos_y = rand() % (WINDOW_HEIGHT - 64);
-
-        DEBUG_LOG(printf("entity->pos_y = %d\n", entity->pos_y));
-    }
-
+    is_enemy_or_player(entity, isplayer);
     entity->width = width;
     entity->height = height;
     entity->texture = loadTexture(app, texture);
@@ -122,6 +79,6 @@ void drawFin(Win *app, Entity *fin, Entity *player) // Fonction d'affichage de l
     fin->pos_x = WINDOW_WIDTH / 2 - fin->width / 2;
     fin->pos_y = WINDOW_HEIGHT / 2 - fin->height / 2;
     prepareCanvas(app);
-    drawEntity(app, fin, player);
+    create_food(app, fin, player);
     presentCanvas(app);
 }

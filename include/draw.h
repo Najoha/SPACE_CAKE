@@ -23,9 +23,10 @@ void presentCanvas(Win *app);
 
 SDL_Texture *loadTexture(Win *app, char *img_path);
 
-int drawEntity(Win *win, Entity *entity, Entity *player);
+void drawEntity(Win *app, Entity *entity) ;
+int create_food(Win *win, Entity *entity, Entity *player);
 void drawFin(Win *app, Entity *fin, Entity *player);
 
-Entity *init_entity(Win *app, char *entityname, char isplayer, int width, int height, char *texture);
+Entity *init_entity(Win *app, char *entityname, int isplayer, int width, int height, char *texture);
 
 #endif /*!DRAW*/

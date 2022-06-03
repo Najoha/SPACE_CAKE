@@ -31,17 +31,17 @@ int main()
     while (Game_Over == 0)
     {
         prepareCanvas(app);
-        drawEntity(app, gateau, gateau);
+        create_food(app, gateau, gateau);
         // La fin du programme est gérée par l'input handler (SDL_QUIT, croix en haut de la fenêtre)
         if (input_handler(gateau) == -1)
             return 0;
 
         // Si le joueur touche un ennemi, il a perdu : on prépare donc le game over
-        if (drawEntity(app, salade, gateau))
+        if (create_food(app, salade, gateau))
             Game_Over = 1;
-        if (drawEntity(app, carotte, gateau))
+        if (create_food(app, carotte, gateau))
             Game_Over = 1;
-        if (drawEntity(app, banane, gateau))
+        if (create_food(app, banane, gateau))
             Game_Over = 1;
         presentCanvas(app);
 
