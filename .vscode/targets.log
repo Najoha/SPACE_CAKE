@@ -1,0 +1,300 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Fri Jun  3 07:04:17 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 12)
+OBJ = $(SRC:.c=.o)
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AGENT_FOLDER = /home/johanna/.vscode-server
+# makefile (from 'Makefile', line 3)
+SRC = source/main.c source/draw.c source/init.c source/input.c source/window.c source/ennemis.c
+# environment
+XDG_SESSION_TYPE = tty
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# default
+MAKE_VERSION := 4.2.1
+# makefile
+CURDIR := /home/johanna/SPACE_CAKE
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /home/johanna/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
+# makefile (from 'Makefile', line 15)
+CFLAGS = -I./include -Wall -Werror -Wextra
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_CWD = /home/johanna
+# environment
+SSH_CONNECTION = 10.0.2.2 54324 10.0.2.15 22
+# environment
+PATH = /home/johanna/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /run/user/1000/vscode-ipc-0c03d2ff-5692-405b-8aaf-cc8be3c5866a.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/johanna/SPACE_CAKE
+# default
+.LOADED := 
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/johanna
+# environment
+LOGNAME = johanna
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 0
+# environment
+XDG_SESSION_ID = 4
+# environment
+USER = johanna
+# makefile
+.DEFAULT_GOAL := space_cake
+# makefile (from 'Makefile', line 1)
+NAME = space_cake
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_CLIENT = 10.0.2.2 54324 22
+# environment
+MAIL = /var/mail/johanna
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+BROWSER = /home/johanna/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/helpers/browser.sh
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 17)
+LIBS = -lSDL2 -lSDL2_image -L/usr/local/lib
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+LANG = C
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# variable set hash-table stats:
+# Load=72/1024=7%, Rehash=0, Collisions=12/107=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2049, inode 4855707): 12 files, no impossibilities.
+
+# 12 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+all: space_cake
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: clean fclean re all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+source/init.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 07:02:10.010265132
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+source/ennemis.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 07:02:10.010265132
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 07:02:09.98626514
+#  File has been updated.
+#  Successfully updated.
+
+# makefile (from 'Makefile', line 23)
+debug: CFLAGS += -D__TEST
+debug: re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=1/32=3%, Rehash=0, Collisions=0/2=0%
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 32):
+	rm -f $(NAME)
+
+# Not a target:
+source/draw.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 07:02:10.010265132
+#  File has been updated.
+#  Successfully updated.
+
+space_cake: source/main.o source/draw.o source/init.o source/input.o source/window.o source/ennemis.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-03 07:02:10.01426513
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 20):
+		$(CC) $(OBJ) $(LIBS) -o $(NAME)
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 29):
+		rm -f $(OBJ)
+
+# Not a target:
+source/main.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 07:02:10.006265133
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+source/input.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 07:02:10.010265132
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+source/window.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 07:02:10.010265132
+#  File has been updated.
+#  Successfully updated.
+ 
+
+# files hash-table stats:
+# Load=16/1024=2%, Rehash=0, Collisions=0/45=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 28 / storage = 265 B / avg = 9 B
+# current buf: size = 8162 B / used = 265 B / count = 28 / avg = 9 B
+
+# strcache performance: lookups = 52 / hit rate = 46%
+# hash-table stats:
+# Load=28/8192=0%, Rehash=0, Collisions=1/52=2%
+# Finished Make data base on Fri Jun  3 07:04:17 2022
+
+ 

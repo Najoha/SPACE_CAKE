@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/johanna/SPACE_CAKE'
+cc -I./include -Wall -Werror -Wextra   -c -o source/main.o source/main.c
+cc -I./include -Wall -Werror -Wextra   -c -o source/draw.o source/draw.c
+cc -I./include -Wall -Werror -Wextra   -c -o source/init.o source/init.c
+cc -I./include -Wall -Werror -Wextra   -c -o source/input.o source/input.c
+cc -I./include -Wall -Werror -Wextra   -c -o source/window.o source/window.c
+cc -I./include -Wall -Werror -Wextra   -c -o source/ennemis.o source/ennemis.c
+cc source/main.o source/draw.o source/init.o source/input.o source/window.o source/ennemis.o -lSDL2 -lSDL2_image -L/usr/local/lib -o space_cake
+make: Leaving directory '/home/johanna/SPACE_CAKE'
+ 
